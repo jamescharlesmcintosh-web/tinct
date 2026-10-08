@@ -1,0 +1,17 @@
+﻿node_modules/
+dist/
+build/
+.next/
+.output/
+.wrangler/
+.lovable/
+.vercel/
+.venv/
+__pycache__/
+*.log
+*.zip
+shots/
+preview.log
+preview.err
+.DS_Store
+Thumbs.db
