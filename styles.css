@@ -737,3 +737,288 @@ body.is-drag .body.is-held {
     height: 14px;
   }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   DISCOUNT DINKS — real coupon-market vibe pass
+   Keeps the existing motion + physics untouched.
+   ═══════════════════════════════════════════════════════════ */
+
+:root{
+  --disp:"Anton", Impact, "Arial Black", sans-serif;
+  --mono:"Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.vat{
+  background:
+    radial-gradient(70% 60% at 12% 16%, rgba(255,93,58,.25), transparent 70%),
+    radial-gradient(62% 58% at 88% 18%, rgba(255,208,64,.24), transparent 72%),
+    radial-gradient(60% 52% at 78% 86%, rgba(66,165,245,.20), transparent 72%),
+    radial-gradient(55% 48% at 18% 82%, rgba(239,71,111,.16), transparent 72%),
+    linear-gradient(135deg,#fff5dc 0%,#ffe7b8 47%,#ffd2a8 100%);
+}
+
+.veil{
+  background:
+    repeating-linear-gradient(135deg,rgba(255,255,255,.10) 0 14px,rgba(255,255,255,0) 14px 28px),
+    radial-gradient(circle at center,transparent 45%,rgba(66,39,20,.08) 100%);
+  mix-blend-mode:normal;
+}
+
+.deal-bg{
+  position:fixed;
+  inset:0;
+  z-index:3;
+  overflow:hidden;
+  pointer-events:none;
+  font-family:var(--disp);
+  text-transform:uppercase;
+  color:#201d18;
+}
+
+.deal-bg__word,
+.deal-bg__ticket,
+.deal-bg__burst{
+  position:absolute;
+  opacity:.09;
+  user-select:none;
+  white-space:nowrap;
+}
+
+.deal-bg__word{
+  line-height:.8;
+  letter-spacing:-.045em;
+}
+
+.deal-bg__word--save{
+  left:-2vw;
+  top:16vh;
+  font-size:clamp(120px,22vw,330px);
+  transform:rotate(-10deg);
+}
+.deal-bg__word--bogo{
+  right:-2vw;
+  top:8vh;
+  font-size:clamp(110px,17vw,260px);
+  transform:rotate(8deg);
+}
+.deal-bg__word--five{
+  left:10vw;
+  bottom:-3vh;
+  font-size:clamp(140px,23vw,340px);
+  transform:rotate(5deg);
+}
+.deal-bg__word--half{
+  right:-6vw;
+  bottom:8vh;
+  font-size:clamp(90px,15vw,220px);
+  transform:rotate(-7deg);
+}
+
+.deal-bg__ticket{
+  opacity:.14;
+  font-family:var(--mono);
+  font-weight:900;
+  letter-spacing:.18em;
+  border:3px dashed rgba(32,29,24,.45);
+  padding:11px 18px;
+  background:rgba(255,255,255,.28);
+}
+.deal-bg__ticket--one{
+  left:5vw;
+  top:67vh;
+  transform:rotate(-8deg);
+}
+.deal-bg__ticket--two{
+  right:8vw;
+  top:55vh;
+  transform:rotate(7deg);
+}
+
+.deal-bg__burst{
+  right:26vw;
+  top:31vh;
+  display:grid;
+  place-items:center;
+  width:150px;
+  aspect-ratio:1;
+  font-size:28px;
+  text-align:center;
+  opacity:.15;
+  background:#ffcf3c;
+  clip-path:polygon(50% 0%,61% 18%,80% 8%,83% 29%,100% 31%,87% 50%,100% 67%,78% 70%,78% 92%,59% 80%,48% 100%,37% 80%,18% 91%,19% 70%,0 67%,14% 50%,0 32%,20% 28%,18% 8%,39% 18%);
+}
+
+.top{
+  align-items:flex-start;
+  padding-top:18px;
+}
+
+.top-left{
+  display:flex;
+  align-items:flex-start;
+  gap:18px;
+  max-width:min(720px,62vw);
+}
+
+.brand-lockup{
+  display:grid;
+  gap:4px;
+  flex:none;
+}
+
+.wordmark{
+  font-family:var(--disp);
+  font-weight:400;
+  font-variation-settings:normal;
+  font-size:clamp(28px,3.5vw,48px);
+  letter-spacing:.015em;
+  line-height:.92;
+}
+
+.tag{
+  font-family:var(--mono);
+  font-size:9px;
+  font-weight:900;
+  letter-spacing:.18em;
+  color:#6e3b24;
+}
+
+.site-deck{
+  margin:2px 0 0;
+  max-width:34ch;
+  font-size:11px;
+  line-height:1.45;
+  font-weight:700;
+  color:#675a4d;
+}
+
+.deal-nav{
+  display:grid;
+  justify-items:end;
+  gap:5px;
+  pointer-events:auto;
+}
+
+.deal-nav__label{
+  font-size:8px;
+  font-weight:900;
+  letter-spacing:.22em;
+  color:#786a5b;
+}
+
+.inks{
+  padding:5px;
+  border:2px solid #201d18;
+  border-radius:999px;
+  background:rgba(255,250,240,.84);
+  box-shadow:4px 4px 0 rgba(32,29,24,.13);
+}
+
+.ink{
+  border:0;
+  box-shadow:none;
+  font-weight:900;
+  color:#443b32;
+}
+
+.ink.is-on{
+  color:#201d18;
+  box-shadow:inset 0 0 0 1px rgba(32,29,24,.18);
+}
+
+.body{
+  font-family:var(--mono);
+}
+
+.body-name,
+.body-title{
+  font-family:var(--disp);
+  font-weight:400;
+  font-variation-settings:normal;
+}
+
+.body-title{
+  font-size:clamp(44px,6.8vw,94px);
+  line-height:.83;
+  letter-spacing:.005em;
+}
+
+.body-sub{
+  font-family:var(--mono);
+  font-style:normal;
+  font-weight:800;
+  font-size:clamp(11px,1.1vw,15px);
+  line-height:1.45;
+}
+
+.body-kicker,
+.body-meta{
+  font-weight:900;
+}
+
+.coupon--pizza{
+  background:
+    linear-gradient(0deg,rgba(255,255,255,.1),rgba(255,255,255,.1)),
+    repeating-linear-gradient(135deg,#ffefdf 0 14px,#ffe2cd 14px 28px);
+}
+.coupon--pizza .body-chip{background:#ff5a36}
+.coupon--pizza .body-name{color:#b9341b}
+
+.coupon--beer{
+  background:
+    linear-gradient(90deg,rgba(255,255,255,.68),rgba(255,255,255,.2)),
+    #ffd95c;
+  box-shadow:9px 9px 0 rgba(98,65,0,.18);
+}
+.coupon--beer .body-name{color:#664500}
+
+.coupon--movies{
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.82),rgba(215,237,255,.86)),
+    #edf8ff;
+  border-color:#194d78;
+}
+.coupon--movies .body-name{color:#194d78}
+
+.coupon--burgers{
+  background:
+    linear-gradient(180deg,#fff7f8,#ffe2e9);
+  border-color:#7e233a;
+}
+.coupon--burgers .body-name{color:#7e233a}
+
+.coupon--cta{
+  background:#dff8cf;
+  border-color:#224b1d;
+}
+
+.bottom{
+  align-items:flex-end;
+}
+
+.hint,
+.foot-meta{
+  padding:8px 10px;
+  border:1px solid rgba(32,29,24,.15);
+  border-radius:8px;
+  background:rgba(255,250,240,.66);
+  backdrop-filter:blur(8px);
+}
+
+.sheet-card{
+  background:
+    linear-gradient(180deg,#fffaf0,#fff4df);
+}
+
+@media (max-width:900px){
+  .site-deck{display:none}
+  .top-left{max-width:none}
+  .deal-nav__label{display:none}
+}
+
+@media (max-width:620px){
+  .wordmark{font-size:26px}
+  .deal-bg__ticket{display:none}
+  .deal-bg__burst{width:100px;font-size:20px;right:8vw}
+}
