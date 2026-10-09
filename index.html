@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-<title>TINCT — small-batch inks</title>
-<meta name="description" content="TINCT mixes small-batch inks for screens and presses. Stir the vat." />
+<title>TINCT — Deals that fight over you</title>
+<meta name="description" content="TINCT is a playful coupon board for food, drinks, movies, and late-night deals." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -18,171 +18,163 @@
 <header class="top">
   <div class="top-left">
     <span class="wordmark">TINCT</span>
-    <span class="tag">SMALL-BATCH INKS · EST. 2021</span>
+    <span class="tag">DEALS THAT FIGHT OVER YOU</span>
   </div>
-  <div class="inks" id="inks" role="group" aria-label="Choose an ink">
-    <button class="ink is-on" data-ink="signal" style="--c:#3ee7f2" type="button"><i></i>SIGNAL</button>
-    <button class="ink" data-ink="press" style="--c:#ff4fa3" type="button"><i></i>PRESS</button>
-    <button class="ink" data-ink="light" style="--c:#ffb020" type="button"><i></i>LIGHT</button>
-    <button class="ink" data-ink="night" style="--c:#8b5cf6" type="button"><i></i>NIGHT</button>
+  <div class="inks" id="inks" role="group" aria-label="Choose a deal type">
+    <button class="ink is-on" data-ink="signal" style="--c:#3ee7f2" type="button"><i></i>PIZZA</button>
+    <button class="ink" data-ink="press" style="--c:#ff4fa3" type="button"><i></i>BEER</button>
+    <button class="ink" data-ink="light" style="--c:#ffb020" type="button"><i></i>MOVIES</button>
+    <button class="ink" data-ink="night" style="--c:#8b5cf6" type="button"><i></i>LATE NIGHT</button>
   </div>
 </header>
 
-<!-- floating bodies live here; the vat drives their motion -->
 <div class="bodies" id="bodies">
 
   <button class="body body--brand" data-sheet="about" style="--c:#eef2f7">
-    <span class="body-kicker">FLUID INK CO.</span>
+    <span class="body-kicker">COUPONS · DROPS · LIMITED OFFERS</span>
     <span class="body-title">TINCT</span>
-    <span class="body-sub">Ink that moves.</span>
+    <span class="body-sub">Deals that fight over you.</span>
   </button>
 
   <button class="body" data-sheet="signal" style="--c:#3ee7f2">
     <span class="body-chip"></span>
-    <span class="body-name">SIGNAL 01</span>
-    <span class="body-line">Cold cyan for backlit glass.</span>
-    <span class="body-meta">2 L BATCH · 9 DAYS REST</span>
+    <span class="body-name">PIZZA NIGHT</span>
+    <span class="body-line">2 large pizzas + wings.</span>
+    <span class="body-meta">$24.99 · DINNER HANDLED</span>
   </button>
 
   <button class="body" data-sheet="press" style="--c:#ff4fa3">
     <span class="body-chip"></span>
-    <span class="body-name">PRESS 04</span>
-    <span class="body-line">Warm magenta, cut for newsprint.</span>
-    <span class="body-meta">2 L BATCH · SOAKS &amp; BLOOMS</span>
+    <span class="body-name">BEER DEAL</span>
+    <span class="body-line">$5 pitchers. Every Thursday.</span>
+    <span class="body-meta">HAPPY HOUR · WHILE IT LASTS</span>
   </button>
 
   <button class="body" data-sheet="light" style="--c:#ffb020">
     <span class="body-chip"></span>
-    <span class="body-name">LIGHT 02</span>
-    <span class="body-line">Fluorescent amber. Use sparingly.</span>
-    <span class="body-meta">1 L BATCH · DARK ONLY</span>
+    <span class="body-name">SUNDAY DRIVE</span>
+    <span class="body-line">Movie tickets — $10.</span>
+    <span class="body-meta">LIFETIME MEMORIES · ENDLESS REFILLS</span>
   </button>
 
   <button class="body" data-sheet="night" style="--c:#8b5cf6">
     <span class="body-chip"></span>
-    <span class="body-name">NIGHT 07</span>
-    <span class="body-line">Near-black with a blue bias.</span>
-    <span class="body-meta">2 L BATCH · QUIET ON BLACK</span>
+    <span class="body-name">LATE NIGHT</span>
+    <span class="body-line">2-for-1 burgers after 9 PM.</span>
+    <span class="body-meta">BECAUSE COOKING IS OVER</span>
   </button>
 
   <button class="body body--cta" data-sheet="batch" style="--c:#eef2f7">
-    <span class="body-name">START A BATCH</span>
-    <span class="body-line">2 litres minimum · six weeks</span>
+    <span class="body-name">GRAB A DEAL</span>
+    <span class="body-line">Good offers. Bad self-control.</span>
   </button>
 
 </div>
 
 <footer class="bottom">
   <p class="hint" id="hint">
-    <span class="hint-key">DRAG</span> THE INK &nbsp;·&nbsp;
-    <span class="hint-key">THROW</span> A LABEL &nbsp;·&nbsp;
+    <span class="hint-key">DRAG</span> THE DEALS &nbsp;·&nbsp;
+    <span class="hint-key">THROW</span> A COUPON &nbsp;·&nbsp;
     <span class="hint-key">CLICK</span> TO OPEN
   </p>
-  <p class="foot-meta">VAT 04 · BERLIN &nbsp; <span id="stat">—</span></p>
+  <p class="foot-meta">OFFERS LIVE · COUPONS LOADED &nbsp; <span id="stat">—</span></p>
 </footer>
 
-<!-- detail sheet -->
 <section class="sheet" id="sheet" hidden aria-live="polite">
   <div class="sheet-scrim" data-close></div>
   <article class="sheet-card">
     <button class="sheet-close" type="button" data-close aria-label="Close">✕</button>
 
     <div class="sheet-inner" data-panel="about" hidden>
-      <p class="sheet-kicker">ABOUT THE VAT</p>
-      <h2 class="sheet-title">We mix for the way<br />ink actually behaves.</h2>
+      <p class="sheet-kicker">ABOUT TINCT</p>
+      <h2 class="sheet-title">Deals that fight<br />over you.</h2>
       <div class="sheet-cols">
-        <p>Most ink is sold as a colour. Ours is sold as a behaviour — how it spreads on
-          a wet press, how it holds an edge on glass, how it goes quiet next to real black.
-          We make four at a time, in two litre batches, and we write down everything.</p>
-        <p>The vat is the whole company. There is no catalogue to leaf through and no
-          swatch book to order. What you see moving is what is in the drum.</p>
+        <p>TINCT is a coupon board built around the stuff people actually buy — dinner,
+          drinks, movies, late-night food, and whatever else is worth leaving the house for.</p>
+        <p>Tap a deal to see the offer. Drag the cards around. Come back when you want to
+          spend less without digging through twenty boring coupon pages.</p>
       </div>
       <dl class="sheet-spec">
-        <div><dt>BATCH</dt><dd>2 litres</dd></div>
-        <div><dt>REST</dt><dd>9 days before it ships</dd></div>
-        <div><dt>LEAD</dt><dd>6 weeks</dd></div>
-        <div><dt>RECORD</dt><dd>Pigment number + full recipe</dd></div>
+        <div><dt>FOOD</dt><dd>Pizza, burgers, takeout</dd></div>
+        <div><dt>DRINKS</dt><dd>Happy hour + pitcher deals</dd></div>
+        <div><dt>FUN</dt><dd>Movies + things to do</dd></div>
+        <div><dt>DROPS</dt><dd>Short-run offers</dd></div>
       </dl>
     </div>
 
     <div class="sheet-inner" data-panel="signal" hidden>
-      <p class="sheet-kicker" style="color:#3ee7f2">SIGNAL 01 · CYAN</p>
-      <h2 class="sheet-title">Holds a 3px edge<br />without buzzing.</h2>
+      <p class="sheet-kicker" style="color:#3ee7f2">PIZZA NIGHT · FEATURED DEAL</p>
+      <h2 class="sheet-title">2 large pizzas + wings.<br />$24.99.</h2>
       <div class="sheet-cols">
-        <p>A cold cyan drawn for backlit glass. It is the only colour we make that looks
-          better at night than in daylight, and we stopped apologising for that.</p>
-        <p>Mixed in two litre batches and rested nine days, which is longer than it needs
-          and exactly as long as it wants.</p>
+        <p>A straight-up dinner deal: two large pizzas plus an order of wings for $24.99.
+          No points math, no fake bundle calculator, no twelve-step checkout ritual.</p>
+        <p>Perfect for game night, family dinner, or pretending you planned ahead.</p>
       </div>
       <dl class="sheet-spec">
-        <div><dt>BASE</dt><dd>Phthalocyanine, water-cut</dd></div>
-        <div><dt>SUBSTRATE</dt><dd>Etched glass · acrylic</dd></div>
-        <div><dt>EDGE</dt><dd>3 px minimum</dd></div>
-        <div><dt>BATCH</dt><dd>2 L</dd></div>
+        <div><dt>DEAL</dt><dd>2 large pizzas + wings</dd></div>
+        <div><dt>PRICE</dt><dd>$24.99</dd></div>
+        <div><dt>WHEN</dt><dd>Tonight</dd></div>
+        <div><dt>TYPE</dt><dd>Food</dd></div>
       </dl>
     </div>
 
     <div class="sheet-inner" data-panel="press" hidden>
-      <p class="sheet-kicker" style="color:#ff4fa3">PRESS 04 · MAGENTA</p>
-      <h2 class="sheet-title">It soaks.<br />It blooms. It stays honest.</h2>
+      <p class="sheet-kicker" style="color:#ff4fa3">BEER DEAL · THURSDAY DROP</p>
+      <h2 class="sheet-title">$5 pitchers.<br />Every Thursday.</h2>
       <div class="sheet-cols">
-        <p>Warm magenta cut for uncoated stock. On newsprint it does what newsprint does —
-          spreads, softens, takes the grain with it — and the result is better than the
-          proof every single time.</p>
-        <p>The oldest colour in the book. Batch 004 is the reason there is a company.</p>
+        <p>Five-dollar pitchers during happy hour. Bring friends or become extremely
+          optimistic about how much pizza you are also ordering.</p>
+        <p>Simple deal, obvious value, limited window. Exactly what a coupon should be.</p>
       </div>
       <dl class="sheet-spec">
-        <div><dt>BASE</dt><dd>Quinacridone</dd></div>
-        <div><dt>SUBSTRATE</dt><dd>Uncoated · newsprint</dd></div>
-        <div><dt>SPREAD</dt><dd>12–18 μm</dd></div>
-        <div><dt>BATCH</dt><dd>2 L</dd></div>
+        <div><dt>DEAL</dt><dd>$5 pitchers</dd></div>
+        <div><dt>WHEN</dt><dd>Thursday</dd></div>
+        <div><dt>WINDOW</dt><dd>Happy hour</dd></div>
+        <div><dt>TYPE</dt><dd>Drinks</dd></div>
       </dl>
     </div>
 
     <div class="sheet-inner" data-panel="light" hidden>
-      <p class="sheet-kicker" style="color:#ffb020">LIGHT 02 · AMBER</p>
-      <h2 class="sheet-title">Useless in daylight.<br />Unforgettable in the dark.</h2>
+      <p class="sheet-kicker" style="color:#ffb020">SUNDAY DRIVE · MOVIE DEAL</p>
+      <h2 class="sheet-title">$10 movie tickets.<br />Any Sunday showing.</h2>
       <div class="sheet-cols">
-        <p>Fluorescent amber. It eats light and gives it back wrong, which is the whole
-          point. We make one litre at a time because nobody has ever needed two.</p>
-        <p>Handle it under low light. The first time you see it on a wall at night you will
-          understand the policy.</p>
+        <p>Ten-dollar tickets on Sunday. Pick the movie, grab a seat, and make a day out
+          of something that normally costs way more than it should.</p>
+        <p>Lifetime memories. Endless refills. At least one trailer you will forget immediately.</p>
       </div>
       <dl class="sheet-spec">
-        <div><dt>BASE</dt><dd>Fluorescent pigment, solvent</dd></div>
-        <div><dt>SUBSTRATE</dt><dd>Paper · matte wall</dd></div>
-        <div><dt>USE</dt><dd>Low light only</dd></div>
-        <div><dt>BATCH</dt><dd>1 L</dd></div>
+        <div><dt>DEAL</dt><dd>$10 movie tickets</dd></div>
+        <div><dt>WHEN</dt><dd>Sunday</dd></div>
+        <div><dt>SHOWING</dt><dd>Any regular screening</dd></div>
+        <div><dt>TYPE</dt><dd>Movies</dd></div>
       </dl>
     </div>
 
     <div class="sheet-inner" data-panel="night" hidden>
-      <p class="sheet-kicker" style="color:#8b5cf6">NIGHT 07 · VIOLET</p>
-      <h2 class="sheet-title">Reads as shadow<br />until you compare it.</h2>
+      <p class="sheet-kicker" style="color:#8b5cf6">LATE NIGHT · BURGER DEAL</p>
+      <h2 class="sheet-title">2-for-1 burgers.<br />After 9 PM.</h2>
       <div class="sheet-cols">
-        <p>Near-black with a blue bias. Put it next to real black and it goes quiet and
-          strange — the panel almost disappears, then the edge comes back.</p>
-        <p>Our most requested colour and our least favourite to explain.</p>
+        <p>Buy one burger, get the second one free after 9 PM. Built for nights when dinner
+          somehow became a problem you are solving at 10:17.</p>
+        <p>Because cooking is over. Fries still negotiable.</p>
       </div>
       <dl class="sheet-spec">
-        <div><dt>BASE</dt><dd>Carbon + ultramarine</dd></div>
-        <div><dt>SUBSTRATE</dt><dd>Anything matte</dd></div>
-        <div><dt>BIAS</dt><dd>Blue, 4°</dd></div>
-        <div><dt>BATCH</dt><dd>2 L</dd></div>
+        <div><dt>DEAL</dt><dd>Buy 1, get 1 burger</dd></div>
+        <div><dt>WHEN</dt><dd>After 9 PM</dd></div>
+        <div><dt>TYPE</dt><dd>Late night</dd></div>
+        <div><dt>VIBE</dt><dd>No judgment</dd></div>
       </dl>
     </div>
 
     <div class="sheet-inner" data-panel="batch" hidden>
-      <p class="sheet-kicker">COMMISSION</p>
-      <h2 class="sheet-title">Start a batch.</h2>
+      <p class="sheet-kicker">MORE DEALS</p>
+      <h2 class="sheet-title">Grab something worth leaving the couch for.</h2>
       <div class="sheet-cols">
-        <p>Two litres minimum, six weeks from deposit to drum. You get the pigment number,
-          the full recipe, and the right to have it mixed again — once, and only if we are
-          both still interested.</p>
-        <p>Tell us what it has to survive: daylight, newsprint, a wet press, a window,
-          a room with the lights off.</p>
+        <p>Food, drinks, movies, late-night drops, and the occasional deal that makes
+          absolutely no sense until you realize how cheap it is.</p>
+        <p>The board changes. The good ones disappear. That is kind of the point.</p>
       </div>
-      <a class="sheet-cta" href="mailto:vat@tinct.ink?subject=Batch%20enquiry">vat@tinct.ink</a>
+      <a class="sheet-cta" href="#">VIEW ALL DEALS →</a>
     </div>
 
   </article>
