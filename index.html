@@ -7,33 +7,48 @@
 <meta name="description" content="Discount Dinks is a playful coupon board for food, drinks, movies, and late-night deals." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
 <canvas id="vat" class="vat"></canvas>
 <div class="veil" aria-hidden="true"></div>
+<div class="deal-bg" aria-hidden="true">
+  <span class="deal-bg__word deal-bg__word--save">SAVE</span>
+  <span class="deal-bg__word deal-bg__word--bogo">BOGO</span>
+  <span class="deal-bg__word deal-bg__word--five">$5</span>
+  <span class="deal-bg__word deal-bg__word--half">50% OFF</span>
+  <span class="deal-bg__ticket deal-bg__ticket--one">TODAY ONLY</span>
+  <span class="deal-bg__ticket deal-bg__ticket--two">DEAL DROP</span>
+  <span class="deal-bg__burst">2 FOR 1</span>
+</div>
 
 <header class="top">
   <div class="top-left">
-    <span class="wordmark">DISCOUNT DINKS</span>
-    <span class="tag">DEALS THAT FIGHT OVER YOU</span>
+    <div class="brand-lockup">
+      <span class="wordmark">DISCOUNT DINKS</span>
+      <span class="tag">DEALS THAT FIGHT OVER YOU</span>
+    </div>
+    <p class="site-deck">A moving coupon wall for food, drinks, movies and late-night stuff worth leaving the house for.</p>
   </div>
-  <div class="inks" id="inks" role="group" aria-label="Choose a deal type">
-    <button class="ink is-on" data-ink="signal" style="--c:#3ee7f2" type="button"><i></i>PIZZA</button>
-    <button class="ink" data-ink="press" style="--c:#ff4fa3" type="button"><i></i>BEER</button>
-    <button class="ink" data-ink="light" style="--c:#ffb020" type="button"><i></i>MOVIES</button>
-    <button class="ink" data-ink="night" style="--c:#8b5cf6" type="button"><i></i>LATE NIGHT</button>
-  </div>
+  <nav class="deal-nav" aria-label="Deal categories">
+    <span class="deal-nav__label">BROWSE</span>
+    <div class="inks" id="inks" role="group" aria-label="Choose a deal type">
+      <button class="ink is-on" data-ink="signal" style="--c:#ff5a36" type="button"><i></i>FOOD</button>
+      <button class="ink" data-ink="press" style="--c:#f4c542" type="button"><i></i>DRINKS</button>
+      <button class="ink" data-ink="light" style="--c:#42a5f5" type="button"><i></i>FUN</button>
+      <button class="ink" data-ink="night" style="--c:#ef476f" type="button"><i></i>LATE NIGHT</button>
+    </div>
+  </nav>
 </header>
 
 <div class="bodies" id="bodies">
 
   <button class="body body--brand" data-sheet="about" style="--c:#eef2f7">
-    <span class="body-kicker">COUPONS · DROPS · LIMITED OFFERS</span>
+    <span class="body-kicker">THE DEAL WALL · UPDATED DAILY</span>
     <span class="body-title">DISCOUNT<br>DINKS</span>
-    <span class="body-sub">Deals that fight over you.</span>
+    <span class="body-sub">Tap a coupon. Save some money. Keep your dignity.</span>
   </button>
 
   <button class="body coupon coupon--pizza" data-sheet="signal" style="--c:#ff5a36">
@@ -77,7 +92,7 @@
     <span class="hint-key">THROW</span> A COUPON &nbsp;·&nbsp;
     <span class="hint-key">CLICK</span> TO OPEN
   </p>
-  <p class="foot-meta">OFFERS LIVE · COUPONS LOADED &nbsp; <span id="stat">—</span></p>
+  <p class="foot-meta">NO MEMBERSHIP · NO POINTS · JUST DEALS &nbsp; <span id="stat">—</span></p>
 </footer>
 
 <section class="sheet" id="sheet" hidden aria-live="polite">
@@ -86,13 +101,11 @@
     <button class="sheet-close" type="button" data-close aria-label="Close">✕</button>
 
     <div class="sheet-inner" data-panel="about" hidden>
-      <p class="sheet-kicker">ABOUT DISCOUNT DINKS</p>
+      <p class="sheet-kicker">WHAT IS DISCOUNT DINKS?</p>
       <h2 class="sheet-title">Deals that fight<br />over you.</h2>
       <div class="sheet-cols">
-        <p>Discount Dinks is a coupon board built around the stuff people actually buy — dinner,
-          drinks, movies, late-night food, and whatever else is worth leaving the house for.</p>
-        <p>Tap a deal to see the offer. Drag the cards around. Come back when you want to
-          spend less without digging through twenty boring coupon pages.</p>
+        <p>Discount Dinks is a live coupon wall for the stuff people actually buy — dinner, drinks, movies, late-night food, and whatever else is worth leaving the house for.</p>
+        <p>The coupons move because the good ones never sit still. Drag the wall, open what looks good, and grab the offer before it disappears.</p>
       </div>
       <dl class="sheet-spec">
         <div><dt>FOOD</dt><dd>Pizza, burgers, takeout</dd></div>
