@@ -462,3 +462,278 @@ body.is-drag .body.is-held {
   }
   .sheet-inner.is-in { animation-duration: 1ms !important; }
 }
+
+
+/* ═══════════════════════════════════════════════════════════
+   DISCOUNT DINKS — coupon-market visual layer
+   Preserve all existing motion/physics; only presentation changes.
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  --void: #f6f0e3;
+  --void-2: #efe4cf;
+  --ink-text: #201d18;
+  --ink-dim: #625c52;
+  --ink-faint: #857d71;
+}
+
+html, body {
+  background: #f6f0e3;
+  color: var(--ink-text);
+}
+
+body {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(32,29,24,.07) 1px, transparent 1.2px),
+    linear-gradient(115deg, rgba(255,255,255,.55), rgba(239,228,207,.45));
+  background-size: 18px 18px, 100% 100%;
+}
+
+.vat {
+  background:
+    radial-gradient(900px 520px at 15% 12%, rgba(255,90,54,.16), transparent 64%),
+    radial-gradient(840px 520px at 85% 18%, rgba(66,165,245,.14), transparent 62%),
+    radial-gradient(760px 500px at 72% 82%, rgba(125,223,100,.13), transparent 62%),
+    linear-gradient(135deg, #fff9ef 0%, #f3ead9 56%, #eee0c9 100%);
+}
+
+.veil {
+  background:
+    linear-gradient(90deg, rgba(32,29,24,.035) 1px, transparent 1px),
+    linear-gradient(rgba(32,29,24,.035) 1px, transparent 1px),
+    repeating-linear-gradient(-12deg, rgba(32,29,24,.018) 0 1px, transparent 1px 5px);
+  background-size: 28px 28px, 28px 28px, auto;
+  mix-blend-mode: multiply;
+}
+
+.wordmark {
+  color: #201d18;
+  letter-spacing: -.025em;
+  text-transform: uppercase;
+}
+
+.tag,
+.hint,
+.foot-meta,
+#stat {
+  color: #756d61;
+}
+
+.ink {
+  border: 1px solid rgba(32,29,24,.18);
+  background: rgba(255,255,255,.7);
+  color: #554f46;
+  box-shadow: 0 3px 0 rgba(32,29,24,.08);
+}
+
+.ink:hover {
+  color: #201d18;
+  border-color: rgba(32,29,24,.35);
+}
+
+.ink.is-on {
+  color: #201d18;
+  box-shadow: 0 3px 0 rgba(32,29,24,.18);
+}
+
+.body {
+  color: #201d18;
+  border: 2px solid #201d18;
+  border-radius: 14px;
+  background: #fffdf7;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: 8px 8px 0 rgba(32,29,24,.16);
+}
+
+.body:hover {
+  border-color: #201d18;
+  box-shadow: 11px 11px 0 rgba(32,29,24,.17);
+}
+
+body.is-drag .body.is-held {
+  border-color: #201d18;
+  box-shadow:
+    13px 13px 0 rgba(32,29,24,.18),
+    0 0 0 3px var(--c);
+}
+
+.body-chip {
+  width: 46px;
+  height: 8px;
+  border-radius: 3px;
+  box-shadow: none;
+}
+
+.body-line {
+  color: #4e493f;
+  font-weight: 600;
+}
+
+.body-meta,
+.body-kicker {
+  color: #746d62;
+}
+
+.body--brand {
+  border-radius: 18px;
+  background:
+    repeating-linear-gradient(90deg, transparent 0 15px, rgba(32,29,24,.045) 15px 16px),
+    #fffaf0;
+  box-shadow: 10px 10px 0 rgba(32,29,24,.17);
+}
+
+.body-title {
+  color: #201d18;
+  line-height: .78;
+}
+
+.body-sub {
+  color: #514b42;
+}
+
+.coupon::before,
+.coupon::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #201d18;
+  border-radius: 50%;
+  background: #f4ead8;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.coupon::before { left: -11px; }
+.coupon::after  { right: -11px; }
+
+.coupon {
+  overflow: visible;
+}
+
+.coupon--pizza {
+  background:
+    linear-gradient(135deg, rgba(255,90,54,.18), transparent 42%),
+    #fff6ee;
+  border-style: solid;
+  transform-origin: center;
+}
+
+.coupon--pizza .body-name {
+  font-style: italic;
+  text-transform: uppercase;
+  letter-spacing: .015em;
+}
+
+.coupon--beer {
+  background:
+    repeating-linear-gradient(-45deg, rgba(244,197,66,.22) 0 10px, rgba(255,255,255,.55) 10px 20px),
+    #fffaf0;
+  border-radius: 8px;
+}
+
+.coupon--beer .body-name {
+  font-family: var(--mono);
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+
+.coupon--movies {
+  background:
+    radial-gradient(circle at 16px 16px, rgba(66,165,245,.18) 0 5px, transparent 6px),
+    #f5fbff;
+  background-size: 32px 32px;
+  border-radius: 20px 6px 20px 6px;
+}
+
+.coupon--movies .body-name {
+  text-transform: uppercase;
+  letter-spacing: .08em;
+}
+
+.coupon--burgers {
+  background:
+    linear-gradient(180deg, rgba(239,71,111,.16), transparent 46%),
+    #fff7f8;
+  border-style: dashed;
+  border-width: 3px;
+  border-radius: 6px;
+}
+
+.coupon--burgers .body-meta {
+  font-weight: 800;
+  color: #5d2535;
+}
+
+.coupon--cta {
+  background:
+    linear-gradient(135deg, rgba(125,223,100,.24), rgba(255,255,255,.72)),
+    #f6fff1;
+  border-radius: 999px;
+  text-align: center;
+}
+
+.coupon--cta::before,
+.coupon--cta::after {
+  display: none;
+}
+
+.body--cta .body-name {
+  color: #183213;
+}
+
+.sheet-scrim {
+  background: rgba(77,65,48,.28);
+}
+
+.sheet-card {
+  border: 2px solid #201d18;
+  background: #fffaf0;
+  color: #201d18;
+  box-shadow: 0 -22px 60px rgba(78,61,35,.22);
+}
+
+.sheet-close {
+  border: 1px solid rgba(32,29,24,.25);
+  background: #fff;
+  color: #514b42;
+}
+
+.sheet-cols p,
+.sheet-kicker {
+  color: #625c52;
+}
+
+.sheet-spec {
+  background: rgba(32,29,24,.12);
+  border-color: rgba(32,29,24,.16);
+}
+
+.sheet-spec > div {
+  background: #fffdf7;
+}
+
+.sheet-spec dt {
+  color: #807768;
+}
+
+.sheet-spec dd,
+.sheet-title,
+.sheet-cta {
+  color: #201d18;
+}
+
+.hint-key {
+  color: #201d18;
+  border-bottom-color: rgba(32,29,24,.3);
+}
+
+@media (max-width: 620px) {
+  .coupon::before,
+  .coupon::after {
+    width: 14px;
+    height: 14px;
+  }
+}
