@@ -1022,3 +1022,16 @@ body.is-drag .body.is-held {
   .deal-bg__ticket{display:none}
   .deal-bg__burst{width:100px;font-size:20px;right:8vw}
 }
+
+
+/* OPTION A — mute the original neon canvas so coupons stay dominant */
+.vat{
+  opacity:.10 !important;
+  filter:grayscale(.72) sepia(.22) saturate(.55) blur(1.8px) !important;
+}
+.veil{
+  opacity:.35 !important;
+}
+.deal-bg{
+  opacity:1;
+}
